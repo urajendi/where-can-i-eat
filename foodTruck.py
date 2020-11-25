@@ -59,12 +59,18 @@ for i in range(n):
         if isInTimeRange(hour, starttime, endtime):
             output.append(data[i]['Applicant'])
 
-# Removing duplicate values in results
-output = list(set(output))
+# If atleast one shop is open
+if output != []:
 
-# Sorting the results
-output.sort()
+    # Removing duplicate values in results
+    output = list(set(output))
 
-# Printing the output
-for i in range(len(output)):
-    print(output[i])
+    # Sorting the results
+    output.sort()
+
+    # Printing the output
+    for i in range(len(output)):
+        print(output[i])
+
+else:
+    print('N/A')
